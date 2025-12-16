@@ -56,8 +56,22 @@ export interface DataBinder {
 	output: DataPath;
 }
 
+export interface Matcher {
+	type: "matcher";
+}
+
+export interface Transformer {
+	type: "transformer";
+}
+
+export interface Selector {
+	type: "selector";
+}
+
 export interface ItemBuilder {
-	items: DataPath;
+	matcher: Matcher;
+	transformer?: Transformer;
+	template: string;
 }
 
 // Matcher: Matches data against a set of rules
